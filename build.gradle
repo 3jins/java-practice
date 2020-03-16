@@ -1,6 +1,9 @@
 plugins {
     id 'java'
+    id "io.franzbecker.gradle-lombok" version "3.3.0"
 }
+
+apply plugin: "io.franzbecker.gradle-lombok"
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -14,4 +17,7 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.6.0')
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
